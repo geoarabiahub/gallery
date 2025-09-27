@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { SampleImage } from '@/types/Sample';
+import { resolveImageUrl } from '@/utils/imageLoader';
 
 interface ImageSliderProps {
   image1: SampleImage;
@@ -52,7 +53,7 @@ const ImageSlider = ({ image1, image2 }: ImageSliderProps) => {
       {/* Base image (image2) */}
       <div className="absolute inset-0">
         <img
-          src={image2.url}
+          src={resolveImageUrl(image2.url)}
           alt={`${image2.technique} view`}
           className="w-full h-full object-contain"
           draggable={false}
@@ -70,7 +71,7 @@ const ImageSlider = ({ image1, image2 }: ImageSliderProps) => {
         }}
       >
         <img
-          src={image1.url}
+          src={resolveImageUrl(image1.url)}
           alt={`${image1.technique} view`}
           className="w-full h-full object-contain"
           draggable={false}

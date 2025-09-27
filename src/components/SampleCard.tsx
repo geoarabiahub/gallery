@@ -1,4 +1,5 @@
 import { Sample } from '@/types/Sample';
+import { resolveImageUrl } from '@/utils/imageLoader';
 
 interface SampleCardProps {
   sample: Sample;
@@ -15,7 +16,7 @@ const SampleCard = ({ sample, onClick }: SampleCardProps) => {
     >
       <div className="aspect-[4/3] relative overflow-hidden">
         <img
-          src={technique1.thumbnail}
+          src={resolveImageUrl(technique1.thumbnail)}
           alt={`${sample.name} - ${technique1.technique}`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"

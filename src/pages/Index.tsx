@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSamples } from '@/hooks/useSamples';
 import { Sample } from '@/types/Sample';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import SampleCard from '@/components/SampleCard';
 import SampleModal from '@/components/SampleModal';
 import LoadingSpinner from '@/components/LoadingSpinner';
@@ -52,6 +53,8 @@ const Index = () => {
           </>
         )}
       </main>
+
+      <Footer />
 
       <SampleModal
         sample={selectedSample}

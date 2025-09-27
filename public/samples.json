@@ -6,13 +6,13 @@
       "images": [
         {
           "technique": "BSE",
-          "url": "/api/placeholder/800/600",
-          "thumbnail": "/api/placeholder/400/300"
+          "url": "/src/assets/quartz-feldspar-bse.jpg",
+          "thumbnail": "/src/assets/quartz-feldspar-bse-thumb.jpg"
         },
         {
           "technique": "EDS",
-          "url": "/api/placeholder/800/600",
-          "thumbnail": "/api/placeholder/400/300"
+          "url": "/src/assets/quartz-feldspar-eds.jpg",
+          "thumbnail": "/src/assets/quartz-feldspar-eds-thumb.jpg"
         }
       ],
       "scanParameters": {
@@ -30,13 +30,13 @@
       "images": [
         {
           "technique": "QEMSCAN",
-          "url": "/api/placeholder/800/600",
-          "thumbnail": "/api/placeholder/400/300"
+          "url": "/src/assets/pyrite-qemscan.jpg",
+          "thumbnail": "/src/assets/pyrite-qemscan-thumb.jpg"
         },
         {
           "technique": "Stereo",
-          "url": "/api/placeholder/800/600",
-          "thumbnail": "/api/placeholder/400/300"
+          "url": "/src/assets/pyrite-stereo.jpg",
+          "thumbnail": "/src/assets/pyrite-stereo-thumb.jpg"
         }
       ],
       "scanParameters": {
