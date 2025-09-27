@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        scientific: {
+          blue: "hsl(var(--scientific-blue))",
+          gray: "hsl(var(--scientific-gray))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +66,13 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        'gallery': 'var(--gallery-shadow)',
+        'hover': 'var(--hover-shadow)',
+      },
+      backdropBlur: {
+        'overlay': '8px',
       },
       keyframes: {
         "accordion-down": {

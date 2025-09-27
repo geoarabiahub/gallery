@@ -1,0 +1,148 @@
+{
+  "samples": [
+    {
+      "id": "sample001",
+      "name": "Quartz-Feldspar Aggregate",
+      "images": [
+        {
+          "technique": "BSE",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        },
+        {
+          "technique": "EDS",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        }
+      ],
+      "scanParameters": {
+        "pointSpacing": "2.5 μm",
+        "fieldScanSize": "1024 x 768 pixels",
+        "dwellTime": "15 ms",
+        "acceleratingVoltage": "20 kV",
+        "workingDistance": "12 mm",
+        "magnification": "500x"
+      }
+    },
+    {
+      "id": "sample002",
+      "name": "Pyrite Crystals",
+      "images": [
+        {
+          "technique": "QEMSCAN",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        },
+        {
+          "technique": "Stereo",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        }
+      ],
+      "scanParameters": {
+        "pointSpacing": "1.0 μm",
+        "fieldScanSize": "2048 x 1536 pixels",
+        "dwellTime": "10 ms",
+        "acceleratingVoltage": "25 kV",
+        "workingDistance": "10 mm",
+        "magnification": "1000x"
+      }
+    },
+    {
+      "id": "sample003",
+      "name": "Carbonaceous Schist",
+      "images": [
+        {
+          "technique": "BSE",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        },
+        {
+          "technique": "QEMSCAN",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        }
+      ],
+      "scanParameters": {
+        "pointSpacing": "3.0 μm",
+        "fieldScanSize": "1536 x 1024 pixels",
+        "dwellTime": "20 ms",
+        "acceleratingVoltage": "15 kV",
+        "workingDistance": "15 mm",
+        "magnification": "250x"
+      }
+    },
+    {
+      "id": "sample004",
+      "name": "Magnetite Inclusions",
+      "images": [
+        {
+          "technique": "EDS",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        },
+        {
+          "technique": "Stereo",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        }
+      ],
+      "scanParameters": {
+        "pointSpacing": "1.5 μm",
+        "fieldScanSize": "1024 x 1024 pixels",
+        "dwellTime": "12 ms",
+        "acceleratingVoltage": "20 kV",
+        "workingDistance": "8 mm",
+        "magnification": "800x"
+      }
+    },
+    {
+      "id": "sample005",
+      "name": "Garnet Porphyroblast",
+      "images": [
+        {
+          "technique": "BSE",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        },
+        {
+          "technique": "EDS",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        }
+      ],
+      "scanParameters": {
+        "pointSpacing": "2.0 μm",
+        "fieldScanSize": "1280 x 960 pixels",
+        "dwellTime": "18 ms",
+        "acceleratingVoltage": "25 kV",
+        "workingDistance": "12 mm",
+        "magnification": "600x"
+      }
+    },
+    {
+      "id": "sample006",
+      "name": "Olivine Phenocrysts",
+      "images": [
+        {
+          "technique": "QEMSCAN",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        },
+        {
+          "technique": "Stereo",
+          "url": "/api/placeholder/800/600",
+          "thumbnail": "/api/placeholder/400/300"
+        }
+      ],
+      "scanParameters": {
+        "pointSpacing": "4.0 μm",
+        "fieldScanSize": "2048 x 2048 pixels",
+        "dwellTime": "25 ms",
+        "acceleratingVoltage": "15 kV",
+        "workingDistance": "20 mm",
+        "magnification": "200x"
+      }
+    }
+  ]
+}
