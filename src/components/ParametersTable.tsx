@@ -5,19 +5,26 @@ interface ParametersTableProps {
 }
 
 const ParametersTable = ({ parameters }: ParametersTableProps) => {
+  const parameterLabels: Record<string, string> = {
+    dimension: 'Dimension',
+    xrayCount: 'X-ray Count',
+    pointSpacing: 'Point Spacing',
+    acceleratingVoltage: 'Accelerating Voltage'
+  };
+
   const parameterEntries = Object.entries(parameters).map(([key, value]) => ({
-    label: key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+    label: parameterLabels[key] || key,
     value
   }));
 
   return (
-    <div className="bg-muted/30 rounded-lg p-6">
-      <h3 className="font-semibold text-foreground mb-4 text-lg">Scan Parameters</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="bg-muted/30 rounded-lg p-4">
+      <h3 className="font-semibold text-foreground mb-3 text-lg">Scan Parameters</h3>
+      <div className="grid grid-cols-2 gap-3">
         {parameterEntries.map(({ label, value }) => (
           <div key={label} className="flex flex-col space-y-1">
             <span className="text-sm font-medium text-muted-foreground">{label}</span>
-            <span className="text-foreground font-mono text-sm bg-card p-2 rounded border">
+            <span className="text-foreground font-mono text-sm bg-card px-2 py-1 rounded border">
               {value}
             </span>
           </div>

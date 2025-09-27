@@ -16,12 +16,10 @@
         }
       ],
       "scanParameters": {
+        "dimension": "1024 x 768 pixels",
+        "xrayCount": "2.5M counts",
         "pointSpacing": "2.5 μm",
-        "fieldScanSize": "1024 x 768 pixels",
-        "dwellTime": "15 ms",
-        "acceleratingVoltage": "20 kV",
-        "workingDistance": "12 mm",
-        "magnification": "500x"
+        "acceleratingVoltage": "20 kV"
       }
     },
     {
@@ -40,12 +38,10 @@
         }
       ],
       "scanParameters": {
+        "dimension": "2048 x 1536 pixels",
+        "xrayCount": "4.2M counts",
         "pointSpacing": "1.0 μm",
-        "fieldScanSize": "2048 x 1536 pixels",
-        "dwellTime": "10 ms",
-        "acceleratingVoltage": "25 kV",
-        "workingDistance": "10 mm",
-        "magnification": "1000x"
+        "acceleratingVoltage": "25 kV"
       }
     },
     {
@@ -64,12 +60,10 @@
         }
       ],
       "scanParameters": {
+        "dimension": "1536 x 1024 pixels",
+        "xrayCount": "1.8M counts",
         "pointSpacing": "3.0 μm",
-        "fieldScanSize": "1536 x 1024 pixels",
-        "dwellTime": "20 ms",
-        "acceleratingVoltage": "15 kV",
-        "workingDistance": "15 mm",
-        "magnification": "250x"
+        "acceleratingVoltage": "15 kV"
       }
     },
     {
@@ -88,12 +82,10 @@
         }
       ],
       "scanParameters": {
+        "dimension": "1024 x 1024 pixels",
+        "xrayCount": "3.1M counts",
         "pointSpacing": "1.5 μm",
-        "fieldScanSize": "1024 x 1024 pixels",
-        "dwellTime": "12 ms",
-        "acceleratingVoltage": "20 kV",
-        "workingDistance": "8 mm",
-        "magnification": "800x"
+        "acceleratingVoltage": "20 kV"
       }
     },
     {
@@ -112,12 +104,10 @@
         }
       ],
       "scanParameters": {
+        "dimension": "1280 x 960 pixels",
+        "xrayCount": "2.9M counts",
         "pointSpacing": "2.0 μm",
-        "fieldScanSize": "1280 x 960 pixels",
-        "dwellTime": "18 ms",
-        "acceleratingVoltage": "25 kV",
-        "workingDistance": "12 mm",
-        "magnification": "600x"
+        "acceleratingVoltage": "25 kV"
       }
     },
     {
@@ -136,12 +126,10 @@
         }
       ],
       "scanParameters": {
+        "dimension": "2048 x 2048 pixels",
+        "xrayCount": "1.2M counts",
         "pointSpacing": "4.0 μm",
-        "fieldScanSize": "2048 x 2048 pixels",
-        "dwellTime": "25 ms",
-        "acceleratingVoltage": "15 kV",
-        "workingDistance": "20 mm",
-        "magnification": "200x"
+        "acceleratingVoltage": "15 kV"
       }
     }
   ]

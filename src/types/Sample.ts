@@ -5,12 +5,10 @@ export interface SampleImage {
 }
 
 export interface ScanParameters {
+  dimension: string;
+  xrayCount: string;
   pointSpacing: string;
-  fieldScanSize: string;
-  dwellTime: string;
   acceleratingVoltage: string;
-  workingDistance: string;
-  magnification: string;
 }
 
 export interface Sample {
