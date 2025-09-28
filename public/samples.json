@@ -44,14 +44,9 @@
           "technique": "BSE",
           "url": "/api/placeholder/800/600",
           "thumbnail": "/api/placeholder/400/300"
-        },
-        {
-          "technique": "QEMSCAN",
-          "url": "/api/placeholder/800/600",
-          "thumbnail": "/api/placeholder/400/300"
         }
       ],
-      "description": "Carbonaceous schist sample showing typical metamorphic textures and mineral assemblages. The analysis reveals the distribution of carbon-rich phases and associated metamorphic minerals, providing insights into the pressure-temperature conditions during metamorphism.",
+      "description": "Carbonaceous schist sample showing typical metamorphic textures and mineral assemblages. The BSE analysis reveals the distribution of carbon-rich phases and associated metamorphic minerals, providing insights into the pressure-temperature conditions during metamorphism.",
       "reference": "Davis, L. (2022). Metamorphic mineral assemblages in carbonaceous schists: A textural and chemical analysis. Metamorphic Geology Review, 38(4), 201-219."
     },
     {
@@ -80,14 +75,9 @@
           "technique": "BSE",
           "url": "/api/placeholder/800/600",
           "thumbnail": "/api/placeholder/400/300"
-        },
-        {
-          "technique": "EDS",
-          "url": "/api/placeholder/800/600",
-          "thumbnail": "/api/placeholder/400/300"
         }
       ],
-      "description": "Large garnet porphyroblast showing characteristic chemical zoning patterns and inclusion trails. The BSE imaging reveals internal textures while EDS mapping provides detailed chemical profiles across the crystal, indicating different stages of metamorphic growth.",
+      "description": "Large garnet porphyroblast showing characteristic chemical zoning patterns and inclusion trails. The BSE imaging reveals internal textures and different stages of metamorphic growth, providing insights into pressure-temperature evolution during metamorphism.",
       "reference": "Anderson, M. & Clark, R. (2023). Garnet porphyroblast growth mechanisms in high-grade metamorphic rocks. Petrology Today, 51(6), 234-251."
     },
     {
