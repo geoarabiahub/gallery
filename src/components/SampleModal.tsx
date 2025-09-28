@@ -2,6 +2,7 @@ import { X } from 'lucide-react';
 import { Sample } from '@/types/Sample';
 import ImageSlider from './ImageSlider';
 import SampleDetails from './SampleDetails';
+import { resolveImageUrl } from '@/utils/imageLoader';
 
 interface SampleModalProps {
   sample: Sample | null;
@@ -56,10 +57,13 @@ const SampleModal = ({ sample, isOpen, onClose }: SampleModalProps) => {
             ) : (
               <div className="w-full h-full flex items-center justify-center">
                 <img 
-                  src={sample.images[0].url} 
+                  src={resolveImageUrl(sample.images[0].url)} 
                   alt={`${sample.name} - ${sample.images[0].technique}`}
                   className="max-w-full max-h-full object-contain"
                 />
+                <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm font-medium">
+                  {sample.images[0].technique}
+                </div>
               </div>
             )}
           </div>
