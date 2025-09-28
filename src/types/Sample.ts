@@ -4,18 +4,12 @@ export interface SampleImage {
   thumbnail: string;
 }
 
-export interface ScanParameters {
-  dimension: string;
-  xrayCount: string;
-  pointSpacing: string;
-  acceleratingVoltage: string;
-}
-
 export interface Sample {
   id: string;
   name: string;
-  images: [SampleImage, SampleImage];
-  scanParameters: ScanParameters;
+  images: SampleImage[];
+  description: string;
+  reference: string;
 }
 
 export interface SamplesData {

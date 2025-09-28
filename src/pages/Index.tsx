@@ -35,9 +35,10 @@ const Index = () => {
         {samplesData && (
           <>
             <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Mineral Analysis Gallery</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 Explore our collection of {samplesData.samples.length} mineral samples analyzed using advanced imaging techniques. 
-                Click on any sample to compare different analytical methods side by side.
+                Click on any sample to view detailed analysis and imaging results.
               </p>
             </div>
             

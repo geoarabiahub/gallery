@@ -1,7 +1,7 @@
 import { X } from 'lucide-react';
 import { Sample } from '@/types/Sample';
 import ImageSlider from './ImageSlider';
-import ParametersTable from './ParametersTable';
+import SampleDetails from './SampleDetails';
 
 interface SampleModalProps {
   sample: Sample | null;
@@ -29,7 +29,10 @@ const SampleModal = ({ sample, isOpen, onClose }: SampleModalProps) => {
           <div>
             <h2 className="text-2xl font-bold text-foreground">{sample.name}</h2>
             <p className="text-muted-foreground mt-1">
-              Comparing {sample.images[0].technique} and {sample.images[1].technique} techniques
+              {sample.images.length > 1 
+                ? `Comparing ${sample.images[0].technique} and ${sample.images[1].technique} techniques`
+                : `${sample.images[0].technique} analysis`
+              }
             </p>
           </div>
           <button
@@ -43,16 +46,29 @@ const SampleModal = ({ sample, isOpen, onClose }: SampleModalProps) => {
 
         {/* Content */}
         <div className="p-6">
-          {/* Image Slider */}
+          {/* Image Display */}
           <div className="aspect-[4/3] bg-muted/20 rounded-lg overflow-hidden mb-6">
-            <ImageSlider 
-              image1={sample.images[0]} 
-              image2={sample.images[1]} 
-            />
+            {sample.images.length > 1 ? (
+              <ImageSlider 
+                image1={sample.images[0]} 
+                image2={sample.images[1]} 
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <img 
+                  src={sample.images[0].url} 
+                  alt={`${sample.name} - ${sample.images[0].technique}`}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            )}
           </div>
 
-          {/* Parameters */}
-          <ParametersTable parameters={sample.scanParameters} />
+          {/* Sample Details */}
+          <SampleDetails 
+            description={sample.description} 
+            reference={sample.reference} 
+          />
         </div>
       </div>
     </div>

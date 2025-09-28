@@ -7,8 +7,6 @@ interface SampleCardProps {
 }
 
 const SampleCard = ({ sample, onClick }: SampleCardProps) => {
-  const [technique1, technique2] = sample.images;
-
   return (
     <div 
       className="group bg-card rounded-lg overflow-hidden shadow-gallery hover:shadow-hover transition-all duration-300 cursor-pointer border border-border"
@@ -16,8 +14,8 @@ const SampleCard = ({ sample, onClick }: SampleCardProps) => {
     >
       <div className="aspect-[4/3] relative overflow-hidden">
         <img
-          src={resolveImageUrl(technique1.thumbnail)}
-          alt={`${sample.name} - ${technique1.technique}`}
+          src={resolveImageUrl(sample.images[0].thumbnail)}
+          alt={`${sample.name} - ${sample.images[0].technique}`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
@@ -28,15 +26,12 @@ const SampleCard = ({ sample, onClick }: SampleCardProps) => {
         <h3 className="font-semibold text-foreground text-lg mb-2 group-hover:text-scientific-blue transition-colors">
           {sample.name}
         </h3>
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span className="bg-secondary/50 px-2 py-1 rounded-md font-medium">
-            {technique1.technique}
-          </span>
-          <span className="text-scientific-gray">vs</span>
-          <span className="bg-secondary/50 px-2 py-1 rounded-md font-medium">
-            {technique2.technique}
-          </span>
-        </div>
+        <p className="text-sm text-muted-foreground">
+          {sample.images.length > 1 
+            ? `${sample.images[0].technique} vs ${sample.images[1].technique}`
+            : sample.images[0].technique
+          }
+        </p>
       </div>
     </div>
   );
