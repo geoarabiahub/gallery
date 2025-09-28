@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface SampleDetailsProps {
   description: string;
   reference: string;
