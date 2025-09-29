@@ -10,6 +10,7 @@ export interface Sample {
   images: SampleImage[];
   description: string;
   reference: string;
+  tags: string[];
 }
 
 export interface SamplesData {

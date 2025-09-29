@@ -16,7 +16,8 @@
         }
       ],
       "description": "This sample shows a typical quartz-feldspar aggregate commonly found in granitic rocks. The BSE image reveals compositional contrast between the lighter feldspar grains and darker quartz crystals, while the EDS mapping provides detailed elemental distribution showing silicon, aluminum, and potassium variations across the mineral phases.",
-      "reference": "Johnson, A. et al. (2023). Automated mineral characterization of granitic aggregates using combined BSE-EDS analysis. Journal of Mineralogical Sciences, 45(3), 123-138."
+      "reference": "Johnson, A. et al. (2023). Automated mineral characterization of granitic aggregates using combined BSE-EDS analysis. Journal of Mineralogical Sciences, 45(3), 123-138.",
+      "tags": ["igneous", "granite", "quartz", "feldspar", "silicates", "crystalline"]
     },
     {
       "id": "sample002",
@@ -34,7 +35,8 @@
         }
       ],
       "description": "Pyrite crystals displaying characteristic cubic morphology and metallic luster. The QEMSCAN analysis provides automated mineral identification and modal mineralogy, while stereomicroscopy reveals surface textures and three-dimensional crystal habits. This sample demonstrates the complementary nature of different analytical approaches.",
-      "reference": "Smith, B. & Wilson, C. (2023). Pyrite characterization using integrated QEMSCAN-stereomicroscopy workflows. Mineralogical Applications, 12(7), 45-62."
+      "reference": "Smith, B. & Wilson, C. (2023). Pyrite characterization using integrated QEMSCAN-stereomicroscopy workflows. Mineralogical Applications, 12(7), 45-62.",
+      "tags": ["sulfides", "pyrite", "cubic", "metallic", "ore minerals", "hydrothermal"]
     },
     {
       "id": "sample003",
@@ -47,7 +49,8 @@
         }
       ],
       "description": "Carbonaceous schist sample showing typical metamorphic textures and mineral assemblages. The BSE analysis reveals the distribution of carbon-rich phases and associated metamorphic minerals, providing insights into the pressure-temperature conditions during metamorphism.",
-      "reference": "Davis, L. (2022). Metamorphic mineral assemblages in carbonaceous schists: A textural and chemical analysis. Metamorphic Geology Review, 38(4), 201-219."
+      "reference": "Davis, L. (2022). Metamorphic mineral assemblages in carbonaceous schists: A textural and chemical analysis. Metamorphic Geology Review, 38(4), 201-219.",
+      "tags": ["metamorphic", "schist", "carbonaceous", "foliated", "carbon", "texture"]
     },
     {
       "id": "sample004",
@@ -65,7 +68,8 @@
         }
       ],
       "description": "Magnetite inclusions within silicate host minerals, demonstrating exsolution textures and magnetic mineral behavior. The combined EDS and stereomicroscopy analysis reveals both chemical composition and three-dimensional morphological characteristics of the magnetite phases.",
-      "reference": "Thompson, K. et al. (2023). Magnetite exsolution in mafic intrusions: Combined chemical and textural analysis. Oxide Mineralogy, 29(2), 78-94."
+      "reference": "Thompson, K. et al. (2023). Magnetite exsolution in mafic intrusions: Combined chemical and textural analysis. Oxide Mineralogy, 29(2), 78-94.",
+      "tags": ["oxides", "magnetite", "inclusions", "magnetic", "exsolution", "mafic"]
     },
     {
       "id": "sample005",
@@ -78,7 +82,8 @@
         }
       ],
       "description": "Large garnet porphyroblast showing characteristic chemical zoning patterns and inclusion trails. The BSE imaging reveals internal textures and different stages of metamorphic growth, providing insights into pressure-temperature evolution during metamorphism.",
-      "reference": "Anderson, M. & Clark, R. (2023). Garnet porphyroblast growth mechanisms in high-grade metamorphic rocks. Petrology Today, 51(6), 234-251."
+      "reference": "Anderson, M. & Clark, R. (2023). Garnet porphyroblast growth mechanisms in high-grade metamorphic rocks. Petrology Today, 51(6), 234-251.",
+      "tags": ["metamorphic", "garnet", "porphyroblast", "zoning", "high-grade", "silicates"]
     },
     {
       "id": "sample006",
@@ -96,7 +101,8 @@
         }
       ],
       "description": "Olivine phenocrysts in volcanic matrix showing characteristic forsteritic composition and crystal forms. The QEMSCAN analysis provides rapid phase identification while stereomicroscopy reveals crystal morphology and surface features typical of volcanic olivine.",
-      "reference": "Garcia, P. & Martinez, J. (2023). Olivine phenocryst analysis in basaltic rocks: Integrated QEMSCAN and optical microscopy approach. Volcanic Petrology, 67(3), 112-128."
+      "reference": "Garcia, P. & Martinez, J. (2023). Olivine phenocryst analysis in basaltic rocks: Integrated QEMSCAN and optical microscopy approach. Volcanic Petrology, 67(3), 112-128.",
+      "tags": ["igneous", "volcanic", "olivine", "phenocrysts", "basalt", "silicates"]
     }
   ]
 }

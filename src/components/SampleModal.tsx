@@ -71,7 +71,8 @@ const SampleModal = ({ sample, isOpen, onClose }: SampleModalProps) => {
           {/* Sample Details */}
           <SampleDetails 
             description={sample.description} 
-            reference={sample.reference} 
+            reference={sample.reference}
+            tags={sample.tags}
           />
         </div>
       </div>
