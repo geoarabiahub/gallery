@@ -33,6 +33,26 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Research Partners Section */}
+        <div className="border-t border-border mt-8 pt-8">
+          <h3 className="font-semibold text-foreground text-center mb-6">Research Partners</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
+            {/* Placeholder sponsor logos - replace with actual logos */}
+            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
+              <span className="text-xs text-muted-foreground font-medium">University Lab</span>
+            </div>
+            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
+              <span className="text-xs text-muted-foreground font-medium">Research Institute</span>
+            </div>
+            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
+              <span className="text-xs text-muted-foreground font-medium">Tech Partner</span>
+            </div>
+            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
+              <span className="text-xs text-muted-foreground font-medium">Equipment Co.</span>
+            </div>
+          </div>
+        </div>
+
         <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-muted-foreground text-sm">
             © {currentYear} Automated Mineralogy Gallery. All rights reserved.
