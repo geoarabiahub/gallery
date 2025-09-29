@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="font-semibold text-foreground mb-3">Automated Mineralogy Gallery</h3>
+            <h3 className="font-semibold text-foreground mb-3">GeoGallery</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Advanced mineral imaging and analysis techniques for geological research and materials science applications.
+              Professional geological photography and imaging showcase featuring advanced analytical techniques for earth science research and education.
             </p>
           </div>
 
@@ -26,9 +26,9 @@ const Footer = () => {
 
           {/* Contact/Info Section */}
           <div>
-            <h3 className="font-semibold text-foreground mb-3">Research</h3>
+            <h3 className="font-semibold text-foreground mb-3">Geological Research</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              High-resolution mineral characterization using automated scanning electron microscopy and image analysis.
+              Advanced geological imaging and analysis supporting earth science research, mineral exploration, and educational initiatives.
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Automated Mineralogy Gallery. All rights reserved.
+            © {currentYear} GeoGallery. All rights reserved.
           </p>
         </div>
       </div>
