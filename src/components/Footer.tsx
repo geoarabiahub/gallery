@@ -1,5 +1,9 @@
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { usePartners } from '@/hooks/usePartners';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { partners, loading } = usePartners();
 
   return (
     <footer className="bg-card border-t border-border mt-16">
@@ -36,21 +40,50 @@ const Footer = () => {
         {/* Research Partners Section */}
         <div className="border-t border-border mt-8 pt-8">
           <h3 className="font-semibold text-foreground text-center mb-6">Research Partners</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
-            {/* Placeholder sponsor logos - replace with actual logos */}
-            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
-              <span className="text-xs text-muted-foreground font-medium">University Lab</span>
+          {loading ? (
+            <div className="flex justify-center">
+              <div className="text-muted-foreground text-sm">Loading partners...</div>
             </div>
-            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
-              <span className="text-xs text-muted-foreground font-medium">Research Institute</span>
+          ) : (
+            <div className="relative max-w-4xl mx-auto">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {partners.map((partner) => (
+                    <CarouselItem key={partner.id} className="pl-2 md:pl-4 basis-1/2 md:basis-1/4">
+                      <a
+                        href={partner.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <div className="flex items-center justify-center w-full h-16 bg-muted rounded-lg hover:bg-muted/80 transition-all duration-200 hover:scale-105">
+                          {partner.logo ? (
+                            <img
+                              src={partner.logo}
+                              alt={partner.name}
+                              className="max-h-8 max-w-full object-contain"
+                            />
+                          ) : (
+                            <span className="text-xs text-muted-foreground font-medium text-center px-2">
+                              {partner.name}
+                            </span>
+                          )}
+                        </div>
+                      </a>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-0" />
+                <CarouselNext className="right-0" />
+              </Carousel>
             </div>
-            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
-              <span className="text-xs text-muted-foreground font-medium">Tech Partner</span>
-            </div>
-            <div className="flex items-center justify-center w-32 h-16 bg-muted rounded-lg hover:bg-muted/80 transition-colors duration-200">
-              <span className="text-xs text-muted-foreground font-medium">Equipment Co.</span>
-            </div>
-          </div>
+          )}
         </div>
 
         <div className="border-t border-border mt-8 pt-6 text-center">

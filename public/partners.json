@@ -1,0 +1,44 @@
+[
+  {
+    "id": "university-lab",
+    "name": "University Lab",
+    "logo": null,
+    "website": "https://example.com/university-lab",
+    "type": "academic"
+  },
+  {
+    "id": "research-institute",
+    "name": "Research Institute",
+    "logo": null,
+    "website": "https://example.com/research-institute",
+    "type": "research"
+  },
+  {
+    "id": "tech-partner",
+    "name": "Tech Partner",
+    "logo": null,
+    "website": "https://example.com/tech-partner",
+    "type": "technology"
+  },
+  {
+    "id": "equipment-co",
+    "name": "Equipment Co.",
+    "logo": null,
+    "website": "https://example.com/equipment-co",
+    "type": "equipment"
+  },
+  {
+    "id": "geological-society",
+    "name": "Geological Society",
+    "logo": null,
+    "website": "https://example.com/geological-society",
+    "type": "academic"
+  },
+  {
+    "id": "mining-corp",
+    "name": "Mining Corp",
+    "logo": null,
+    "website": "https://example.com/mining-corp",
+    "type": "industry"
+  }
+]
