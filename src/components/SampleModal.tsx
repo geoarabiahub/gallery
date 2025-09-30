@@ -1,4 +1,5 @@
 import { X } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { Sample } from '@/types/Sample';
 import ImageSlider from './ImageSlider';
 import SampleDetails from './SampleDetails';
@@ -6,17 +7,22 @@ import { resolveImageUrl } from '@/utils/imageLoader';
 
 interface SampleModalProps {
   sample: Sample | null;
-  isOpen: boolean;
   onClose: () => void;
+  onTagClick: (tag: string) => void;
 }
 
-const SampleModal = ({ sample, isOpen, onClose }: SampleModalProps) => {
-  if (!isOpen || !sample) return null;
+const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
+  if (!sample) return null;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
+  };
+
+  const handleTagClick = (tag: string) => {
+    onTagClick(tag);
+    onClose(); // Close modal after selecting tag
   };
 
   return (
@@ -48,7 +54,7 @@ const SampleModal = ({ sample, isOpen, onClose }: SampleModalProps) => {
         {/* Content */}
         <div className="p-6">
           {/* Image Display */}
-          <div className="aspect-[4/3] bg-muted/20 rounded-lg overflow-hidden mb-6">
+          <div className="aspect-[4/3] bg-muted/20 rounded-lg overflow-hidden mb-6 relative">
             {sample.images.length > 1 ? (
               <ImageSlider 
                 image1={sample.images[0]} 
@@ -69,11 +75,37 @@ const SampleModal = ({ sample, isOpen, onClose }: SampleModalProps) => {
           </div>
 
           {/* Sample Details */}
-          <SampleDetails 
-            description={sample.description} 
-            reference={sample.reference}
-            tags={sample.tags}
-          />
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Description</h3>
+              <p className="text-muted-foreground">{sample.description}</p>
+            </div>
+            
+            {/* Tags */}
+            {sample.tags && sample.tags.length > 0 && (
+              <div>
+                <h4 className="text-sm font-medium text-foreground mb-2">Tags</h4>
+                <div className="flex flex-wrap gap-2">
+                  {sample.tags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                      onClick={() => handleTagClick(tag)}
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <SampleDetails 
+              description=""
+              reference={sample.reference}
+              tags={[]}
+            />
+          </div>
         </div>
       </div>
     </div>

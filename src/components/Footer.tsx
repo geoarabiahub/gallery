@@ -1,9 +1,22 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import React, { useEffect, useRef, useState } from 'react';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { usePartners } from '@/hooks/usePartners';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { partners, loading } = usePartners();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [emblaApi]);
 
   return (
     <footer className="bg-card border-t border-border mt-16">
@@ -46,23 +59,17 @@ const Footer = () => {
             </div>
           ) : (
             <div className="relative max-w-4xl mx-auto">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
-                <CarouselContent className="-ml-2 md:-ml-4">
+              <div className="embla overflow-hidden" ref={emblaRef}>
+                <div className="embla__container flex">
                   {partners.map((partner) => (
-                    <CarouselItem key={partner.id} className="pl-2 md:pl-4 basis-1/2 md:basis-1/4">
+                    <div key={partner.id} className="embla__slide flex-[0_0_50%] md:flex-[0_0_25%] pl-2 md:pl-4">
                       <a
                         href={partner.website}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block"
                       >
-                        <div className="flex items-center justify-center w-full h-16 bg-muted rounded-lg hover:bg-muted/80 transition-all duration-200 hover:scale-105">
+                        <div className="flex items-center justify-center w-full h-16 bg-muted rounded-lg hover:bg-muted/80 transition-all duration-200 hover:scale-105 mx-2">
                           {partner.logo ? (
                             <img
                               src={partner.logo}
@@ -76,12 +83,10 @@ const Footer = () => {
                           )}
                         </div>
                       </a>
-                    </CarouselItem>
+                    </div>
                   ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-0" />
-                <CarouselNext className="right-0" />
-              </Carousel>
+                </div>
+              </div>
             </div>
           )}
         </div>

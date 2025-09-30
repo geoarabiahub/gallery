@@ -111,8 +111,8 @@ const Index = () => {
 
       <SampleModal
         sample={selectedSample}
-        isOpen={isModalOpen}
         onClose={handleCloseModal}
+        onTagClick={handleTagToggle}
       />
     </div>
   );
