@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { useEffect } from 'react';
 import { usePartners } from '@/hooks/usePartners';
 import useEmblaCarousel from 'embla-carousel-react';
 
