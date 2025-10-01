@@ -1,5 +1,4 @@
 import { X } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { Sample } from '@/types/Sample';
 import ImageSlider from './ImageSlider';
 import SampleDetails from './SampleDetails';
@@ -75,37 +74,12 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
           </div>
 
           {/* Sample Details */}
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Description</h3>
-              <p className="text-muted-foreground">{sample.description}</p>
-            </div>
-            
-            {/* Tags */}
-            {sample.tags && sample.tags.length > 0 && (
-              <div>
-                <h4 className="text-sm font-medium text-foreground mb-2">Tags</h4>
-                <div className="flex flex-wrap gap-2">
-                  {sample.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                      onClick={() => handleTagClick(tag)}
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <SampleDetails 
-              description=""
-              reference={sample.reference}
-              tags={[]}
-            />
-          </div>
+          <SampleDetails 
+            description={sample.description}
+            reference={sample.reference}
+            tags={sample.tags}
+            onTagClick={handleTagClick}
+          />
         </div>
       </div>
     </div>
