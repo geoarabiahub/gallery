@@ -22,8 +22,8 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-6">
           <Link to="/" className="flex items-center space-x-3 shrink-0">
-            <img src={logo} alt="GeoGallery" className="h-10" />
-            <h1 className="text-2xl font-bold text-foreground">GeoGallery</h1>
+            <img src={logo} alt="Geoscience Gallery" className="h-10" />
+            <h1 className="text-2xl font-bold text-foreground">Geoscience Gallery</h1>
           </Link>
           
           <div className="relative max-w-md w-full">

@@ -64,7 +64,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} GeoGallery. Developed and maintained by{' '}
+            © {currentYear} Geoscience Gallery. Developed and maintained by{' '}
             <a 
               href="https://digitalgeosciences.com/" 
               target="_blank" 

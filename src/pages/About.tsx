@@ -8,11 +8,11 @@ const About = () => {
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="prose prose-slate max-w-none">
-          <h1 className="text-4xl font-bold text-foreground mb-8">About GeoGallery</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-8">About Geoscience Gallery</h1>
           
           <div className="space-y-6 text-foreground leading-relaxed">
             <p className="text-lg">
-              GeoGallery is a comprehensive digital platform showcasing high-resolution mineral imaging 
+              Geoscience Gallery is a comprehensive digital platform showcasing high-resolution mineral imaging 
               and analysis techniques used in modern geological research and mineral characterization.
             </p>
             
