@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useSamples } from '@/hooks/useSamples';
 import { Sample } from '@/types/Sample';
 import Header from '@/components/Header';
@@ -11,6 +12,8 @@ import ErrorMessage from '@/components/ErrorMessage';
 
 const Index = () => {
   const { samplesData, loading, error } = useSamples();
+  const [searchParams] = useSearchParams();
+  const searchQuery = searchParams.get('search') || '';
   const [selectedSample, setSelectedSample] = useState<Sample | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -25,15 +28,31 @@ const Index = () => {
     return Array.from(tags).sort();
   }, [samplesData]);
 
-  // Filter samples based on selected tags
+  // Filter samples based on selected tags and search query
   const filteredSamples = useMemo(() => {
-    if (!samplesData || selectedTags.length === 0) {
-      return samplesData?.samples || [];
+    if (!samplesData) return [];
+    
+    let filtered = samplesData.samples;
+    
+    // Filter by tags
+    if (selectedTags.length > 0) {
+      filtered = filtered.filter(sample =>
+        selectedTags.every(tag => sample.tags.includes(tag))
+      );
     }
-    return samplesData.samples.filter(sample =>
-      selectedTags.every(tag => sample.tags.includes(tag))
-    );
-  }, [samplesData, selectedTags]);
+    
+    // Filter by search query
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(sample =>
+        sample.name.toLowerCase().includes(query) ||
+        sample.description.toLowerCase().includes(query) ||
+        sample.tags.some(tag => tag.toLowerCase().includes(query))
+      );
+    }
+    
+    return filtered;
+  }, [samplesData, selectedTags, searchQuery]);
 
   const handleTagToggle = (tag: string) => {
     setSelectedTags(prev =>
