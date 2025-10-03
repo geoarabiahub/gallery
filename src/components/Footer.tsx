@@ -21,9 +21,9 @@ const Footer = () => {
     <footer className="bg-card border-t border-border mt-16">
       <div className="container mx-auto px-4 py-8">
 
-        {/* Research Partners Section */}
-        <div className="mt-8 pt-8">
-          <h3 className="font-semibold text-foreground text-center mb-6">Research Partners</h3>
+        {/* Sponsors Section */}
+        <div className="mt-4 pt-4">
+          <h3 className="font-semibold text-foreground text-center mb-4">Sponsors</h3>
           {loading ? (
             <div className="flex justify-center">
               <div className="text-muted-foreground text-sm">Loading partners...</div>
