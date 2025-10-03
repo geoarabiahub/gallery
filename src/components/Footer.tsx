@@ -20,34 +20,6 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border mt-16">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-3">GeoGallery</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Professional geological photography and imaging showcase featuring advanced analytical techniques for earth science research and education.
-            </p>
-          </div>
-
-          {/* Techniques Section */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-3">Imaging Techniques</h3>
-            <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>BSE - Backscattered Electron Imaging</li>
-              <li>EDS - Energy Dispersive Spectroscopy</li>
-              <li>QEMSCAN - Quantitative Evaluation of Minerals</li>
-              <li>Stereo - Stereoscopic Microscopy</li>
-            </ul>
-          </div>
-
-          {/* Contact/Info Section */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-3">Geological Research</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Advanced geological imaging and analysis supporting earth science research, mineral exploration, and educational initiatives.
-            </p>
-          </div>
-        </div>
 
         {/* Research Partners Section */}
         <div className="border-t border-border mt-8 pt-8">
