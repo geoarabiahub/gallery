@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8">
 
         {/* Research Partners Section */}
-        <div className="border-t border-border mt-8 pt-8">
+        <div className="mt-8 pt-8">
           <h3 className="font-semibold text-foreground text-center mb-6">Research Partners</h3>
           {loading ? (
             <div className="flex justify-center">
