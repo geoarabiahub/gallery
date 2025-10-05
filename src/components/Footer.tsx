@@ -45,7 +45,7 @@ const Footer = () => {
                             <img
                               src={partner.logo}
                               alt={partner.name}
-                              className="max-h-8 max-w-[40px] object-contain flex-shrink-0"
+                              className="max-h-12 max-w-[60px] object-contain flex-shrink-0"
                             />
                           )}
                           <span className="text-xs text-muted-foreground font-medium text-center">
