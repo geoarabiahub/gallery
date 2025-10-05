@@ -40,18 +40,17 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         className="block"
                       >
-                        <div className="flex items-center justify-center w-full h-16 bg-muted rounded-lg hover:bg-muted/80 transition-all duration-200 hover:scale-105 mx-2">
-                          {partner.logo ? (
+                        <div className="flex flex-col items-center justify-center w-full h-20 bg-muted rounded-lg hover:bg-muted/80 transition-all duration-200 hover:scale-105 mx-2 gap-2 py-2">
+                          {partner.logo && (
                             <img
                               src={partner.logo}
                               alt={partner.name}
                               className="max-h-8 max-w-full object-contain"
                             />
-                          ) : (
-                            <span className="text-xs text-muted-foreground font-medium text-center px-2">
-                              {partner.name}
-                            </span>
                           )}
+                          <span className="text-xs text-muted-foreground font-medium text-center px-2">
+                            {partner.name}
+                          </span>
                         </div>
                       </a>
                     </div>
