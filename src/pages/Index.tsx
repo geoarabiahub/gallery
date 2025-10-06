@@ -9,6 +9,7 @@ import SampleModal from '@/components/SampleModal';
 import TagFilter from '@/components/TagFilter';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorMessage from '@/components/ErrorMessage';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   const { samplesData, loading, error } = useSamples();
@@ -17,6 +18,9 @@ const Index = () => {
   const [selectedSample, setSelectedSample] = useState<Sample | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [displayCount, setDisplayCount] = useState(12);
+
+  const ITEMS_PER_LOAD = 12;
 
   // Get all unique tags from samples
   const allTags = useMemo(() => {
@@ -54,16 +58,29 @@ const Index = () => {
     return filtered;
   }, [samplesData, selectedTags, searchQuery]);
 
+  // Samples to display based on load more count
+  const displayedSamples = useMemo(() => {
+    return filteredSamples.slice(0, displayCount);
+  }, [filteredSamples, displayCount]);
+
+  const hasMoreSamples = filteredSamples.length > displayCount;
+
   const handleTagToggle = (tag: string) => {
     setSelectedTags(prev =>
       prev.includes(tag)
         ? prev.filter(t => t !== tag)
         : [...prev, tag]
     );
+    setDisplayCount(ITEMS_PER_LOAD); // Reset display count when filters change
   };
 
   const handleClearAllTags = () => {
     setSelectedTags([]);
+    setDisplayCount(ITEMS_PER_LOAD); // Reset display count when clearing filters
+  };
+
+  const handleLoadMore = () => {
+    setDisplayCount(prev => prev + ITEMS_PER_LOAD);
   };
 
   const handleSampleClick = (sample: Sample) => {
@@ -104,17 +121,17 @@ const Index = () => {
             
             <div className="mb-4 text-center">
               <p className="text-muted-foreground text-sm">
-                Showing {filteredSamples.length} of {samplesData.samples.length} samples
-                {selectedTags.length > 0 && (
+                Showing {displayedSamples.length} of {filteredSamples.length} samples
+                {filteredSamples.length !== samplesData.samples.length && (
                   <span className="ml-1">
-                    (filtered by: {selectedTags.join(', ')})
+                    ({filteredSamples.length} filtered from {samplesData.samples.length} total)
                   </span>
                 )}
               </p>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {filteredSamples.map((sample) => (
+              {displayedSamples.map((sample) => (
                 <SampleCard
                   key={sample.id}
                   sample={sample}
@@ -122,6 +139,18 @@ const Index = () => {
                 />
               ))}
             </div>
+
+            {hasMoreSamples && (
+              <div className="mt-8 text-center">
+                <Button 
+                  onClick={handleLoadMore}
+                  variant="outline"
+                  size="lg"
+                >
+                  Load More ({filteredSamples.length - displayCount} remaining)
+                </Button>
+              </div>
+            )}
           </>
         )}
       </main>
