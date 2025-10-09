@@ -29,9 +29,9 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
       className="fixed inset-0 bg-background/80 backdrop-blur-overlay z-50 flex items-center justify-center p-4"
       onClick={handleBackdropClick}
     >
-      <div className="bg-card rounded-lg shadow-hover border border-border max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-card rounded-lg shadow-hover border border-border max-w-7xl w-full h-[90vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-border">
+        <div className="flex items-center justify-between p-6 border-b border-border flex-shrink-0">
           <div>
             <h2 className="text-2xl font-bold text-foreground">{sample.name}</h2>
             <p className="text-muted-foreground mt-1">
@@ -50,17 +50,17 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
           </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6">
-          {/* Image Display */}
-          <div className="aspect-[4/3] bg-muted/20 rounded-lg overflow-hidden mb-6 relative">
+        {/* Content - Two Column Layout */}
+        <div className="flex flex-1 min-h-0">
+          {/* Left: Image Display */}
+          <div className="flex-1 bg-muted/20 relative flex items-center justify-center">
             {sample.images.length > 1 ? (
               <ImageSlider 
                 image1={sample.images[0]} 
                 image2={sample.images[1]} 
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center p-8">
                 <img 
                   src={resolveImageUrl(sample.images[0].url)} 
                   alt={`${sample.name} - ${sample.images[0].technique}`}
@@ -73,13 +73,17 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
             )}
           </div>
 
-          {/* Sample Details */}
-          <SampleDetails 
-            description={sample.description}
-            reference={sample.reference}
-            tags={sample.tags}
-            onTagClick={handleTagClick}
-          />
+          {/* Right: Sample Details Sidebar */}
+          <div className="w-[400px] border-l border-border bg-background overflow-y-auto flex-shrink-0">
+            <div className="p-6">
+              <SampleDetails 
+                description={sample.description}
+                reference={sample.reference}
+                tags={sample.tags}
+                onTagClick={handleTagClick}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
