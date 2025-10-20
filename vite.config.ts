@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: process.env.GITHUB_ACTIONS ? '/geosciencegallery/' : '/',
+  base: process.env.GITHUB_ACTIONS ? '/gallery/' : '/',
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
