@@ -1,44 +1,10 @@
 [
   {
-    "id": "university-lab",
-    "name": "Earth Sciences University",
-    "logo": "/logos/university-lab.png",
-    "website": "https://example.com/university-lab",
-    "type": "academic"
-  },
-  {
-    "id": "research-institute",
-    "name": "Mineralogy Research Institute",
-    "logo": "/logos/research-institute.png",
-    "website": "https://example.com/research-institute",
-    "type": "research"
-  },
-  {
-    "id": "tech-partner",
-    "name": "GeoTech Solutions",
-    "logo": "/logos/tech-partner.png",
-    "website": "https://example.com/tech-partner",
+    "id": "digitalgeosciences",
+    "name": "Digital Geosciences",
+    "logo": "/logos/digitalgeosciences.png",
+    "website": "https://digitalgeosciences.com",
     "type": "technology"
-  },
-  {
-    "id": "equipment-co",
-    "name": "Advanced Microscopy Systems",
-    "logo": "/logos/equipment-co.png",
-    "website": "https://example.com/equipment-co",
-    "type": "equipment"
-  },
-  {
-    "id": "geological-society",
-    "name": "International Geological Society",
-    "logo": "/logos/geological-society.png",
-    "website": "https://example.com/geological-society",
-    "type": "academic"
-  },
-  {
-    "id": "mining-corp",
-    "name": "Global Mining Corporation",
-    "logo": "/logos/mining-corp.png",
-    "website": "https://example.com/mining-corp",
-    "type": "industry"
   }
+  
 ]
