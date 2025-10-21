@@ -50,19 +50,19 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
           </button>
         </div>
 
-        {/* Content - Two Column Layout */}
-        <div className="flex flex-1 min-h-0">
-          {/* Left: Image Display */}
-          <div className="flex-1 bg-muted/20 relative flex items-center justify-center">
+        {/* Content - Responsive Layout */}
+        <div className="flex flex-col lg:flex-row flex-1 min-h-0">
+          {/* Image Display */}
+          <div className="flex-1 bg-muted/20 relative flex items-center justify-center min-h-[300px] lg:min-h-0">
             {sample.images.length > 1 ? (
-              <ImageSlider 
-                image1={sample.images[0]} 
-                image2={sample.images[1]} 
+              <ImageSlider
+                image1={sample.images[0]}
+                image2={sample.images[1]}
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center p-8">
-                <img 
-                  src={resolveImageUrl(sample.images[0].url)} 
+              <div className="w-full h-full flex items-center justify-center p-4 lg:p-8">
+                <img
+                  src={resolveImageUrl(sample.images[0].url)}
                   alt={`${sample.name} - ${sample.images[0].technique}`}
                   className="max-w-full max-h-full object-contain"
                 />
@@ -73,10 +73,10 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
             )}
           </div>
 
-          {/* Right: Sample Details Sidebar */}
-          <div className="w-[400px] border-l border-border bg-background overflow-y-auto flex-shrink-0">
-            <div className="p-6">
-              <SampleDetails 
+          {/* Sample Details - Sidebar on desktop, stacked on mobile */}
+          <div className="w-full lg:w-[400px] border-t lg:border-t-0 lg:border-l border-border bg-background overflow-y-auto flex-shrink-0">
+            <div className="p-4 lg:p-6">
+              <SampleDetails
                 description={sample.description}
                 reference={sample.reference}
                 tags={sample.tags}
