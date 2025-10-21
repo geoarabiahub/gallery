@@ -2,36 +2,36 @@
   "samples": [
     {
       "id": "sample001",
-      "name": "Quartz-Feldspar Aggregate",
+      "name": "Illite grain coating",
       "images": [
         {
           "technique": "BSE",
-          "url": "/src/assets/quartz-feldspar-bse.jpg",
-          "thumbnail": "/src/assets/quartz-feldspar-bse-thumb.jpg"
+          "url": "/src/assets/samples/001_illitecoatingBSE.png",
+          "thumbnail": "/src/assets/samples/001_illitecoatingQEMSCAN-thumb.png"
         },
         {
-          "technique": "EDS",
-          "url": "/src/assets/quartz-feldspar-eds.jpg",
-          "thumbnail": "/src/assets/quartz-feldspar-eds-thumb.jpg"
+          "technique": "QEMSCAN",
+          "url": "/src/assets/samples/001_illitecoatingQEMSCAN.png",
+          "thumbnail": "/src/assets/samples/001_illitecoatingQEMSCAN-thumb.png"
         }
       ],
-      "description": "This sample shows a typical quartz-feldspar aggregate commonly found in granitic rocks. The BSE image reveals compositional contrast between the lighter feldspar grains and darker quartz crystals, while the EDS mapping provides detailed elemental distribution showing silicon, aluminum, and potassium variations across the mineral phases.",
-      "reference": "Johnson, A. et al. (2023). Automated mineral characterization of granitic aggregates using combined BSE-EDS analysis. Journal of Mineralogical Sciences, 45(3), 123-138.",
-      "tags": ["igneous", "granite", "quartz", "feldspar", "silicates", "crystalline"]
+      "description": "This card compares a BSE (left) and QEMSCAN (right) view of a rock sample. The BSE image shows compositional contrast and grain textures, while the QEMSCAN map identifies minerals: pink areas represent quartz, and lime-green areas show illite forming grain coatings along quartz surfaces. This highlights the distribution of illite coatings, which can affect reservoir quality and fluid interactions.",
+      "reference": "Bello, A. M., Al-Ramadan, K., Babalola, L. O., Alqubalee, A., & Amao, A. O. (2023). Impact of grain-coating illite in preventing quartz cementation: Example from permo-carboniferous sandstone, Central Saudi Arabia. Marine and Petroleum Geology, 149, 106073.",
+      "tags": ["illite", "clay", "quartz", "coating"]
     },
     {
-      "id": "sample005",
-      "name": "Garnet Porphyroblast",
+      "id": "sample002",
+      "name": "Pyrite-bearing sandstone",
       "images": [
         {
-          "technique": "BSE",
-          "url": "/api/placeholder/800/600",
-          "thumbnail": "/api/placeholder/400/300"
+          "technique": "Stero",
+          "url": "/src/assets/samples/002_pyrite_sandstone.png",
+          "thumbnail": "/src/assets/samples/002_pyrite_sandstone-thum.png"
         }
       ],
-      "description": "Large garnet porphyroblast showing characteristic chemical zoning patterns and inclusion trails. The BSE imaging reveals internal textures and different stages of metamorphic growth, providing insights into pressure-temperature evolution during metamorphism.",
-      "reference": "Anderson, M. & Clark, R. (2023). Garnet porphyroblast growth mechanisms in high-grade metamorphic rocks. Petrology Today, 51(6), 234-251.",
-      "tags": ["metamorphic", "garnet", "porphyroblast", "zoning", "high-grade", "silicates"]
+      "description": "This stereo image shows pyrite (golden grains) distributed within a sandstone. Pyrite occurs as fine to medium grains, clustered along grain boundaries and pore spaces.",
+      "reference": "Alqubalee, A., Abdullatif, O., Babalola, L., & Makkawi, M. (2019). Characteristics of Paleozoic tight gas sandstone reservoir: integration of lithofacies, paleoenvironments, and spectral gamma-ray analyses, Rub’al Khali Basin, Saudi Arabia. Arabian Journal of Geosciences, 12(11), 344.",
+      "tags": ["pyrite", "quartz", "sandstone", "Sarah", "silicates"]
     }
     
   ]
