@@ -105,10 +105,9 @@ const Index = () => {
         {samplesData && (
           <>
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Geological Analysis Gallery</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Welcome to Geoscience Gallery</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Explore our collection of {samplesData.samples.length} geological samples analyzed using advanced imaging techniques. 
-                Click on any sample to view detailed analysis and imaging results.
+                Explore our collection of {samplesData.samples.length} of Earth’s materials at the microscale.. 
               </p>
             </div>
             

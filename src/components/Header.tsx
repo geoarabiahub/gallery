@@ -25,7 +25,7 @@ const Header = () => {
             <img src={logo} alt="Geoscience Gallery" className="h-8 md:h-10" />
             <div className="flex flex-col">
               <h1 className="text-lg md:text-2xl font-bold text-foreground">Geoscience Gallery</h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">Advanced geological imaging</p>
+              <p className="text-xs text-muted-foreground hidden sm:block">The art within the rock — Beauty in every grain</p>
             </div>
           </Link>
 

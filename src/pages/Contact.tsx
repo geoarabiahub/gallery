@@ -23,7 +23,7 @@ const Contact = () => {
                   <Mail className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">contact@geogallery.org</p>
+                    <p className="text-muted-foreground">info@digitalgeosciences.com</p>
                   </div>
                 </div>
                 
@@ -31,7 +31,7 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+966 13 8604361</p>
                   </div>
                 </div>
                 
@@ -40,10 +40,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground">Address</h3>
                     <p className="text-muted-foreground">
-                      Department of Earth Sciences<br />
-                      University Research Center<br />
-                      123 Science Drive<br />
-                      Research City, RC 12345
+                      College of Petroleum Engineering & Geosciences<br />
+                      King Fahd University of Petroleum and Minerals<br />
+                      Dhahran, 31261<br />
+                      Saudi Arabia
                     </p>
                   </div>
                 </div>
