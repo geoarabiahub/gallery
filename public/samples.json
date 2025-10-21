@@ -6,13 +6,13 @@
       "images": [
         {
           "technique": "BSE",
-          "url": "/src/assets/samples/001_illitecoatingBSE.png",
-          "thumbnail": "/src/assets/samples/001_illitecoatingQEMSCAN-thumb.png"
+          "url": "/samples/001_illitecoatingBSE.png",
+          "thumbnail": "/samples/001_illitecoatingQEMSCAN-thumb.png"
         },
         {
           "technique": "QEMSCAN",
-          "url": "/src/assets/samples/001_illitecoatingQEMSCAN.png",
-          "thumbnail": "/src/assets/samples/001_illitecoatingQEMSCAN-thumb.png"
+          "url": "/samples/001_illitecoatingQEMSCAN.png",
+          "thumbnail": "/samples/001_illitecoatingQEMSCAN-thumb.png"
         }
       ],
       "description": "This card compares a BSE (left) and QEMSCAN (right) view of a rock sample. The BSE image shows compositional contrast and grain textures, while the QEMSCAN map identifies minerals: pink areas represent quartz, and lime-green areas show illite forming grain coatings along quartz surfaces. This highlights the distribution of illite coatings, which can affect reservoir quality and fluid interactions.",
@@ -25,8 +25,8 @@
       "images": [
         {
           "technique": "Stero",
-          "url": "/src/assets/samples/002_pyrite_sandstone.png",
-          "thumbnail": "/src/assets/samples/002_pyrite_sandstone-thum.png"
+          "url": "/samples/002_pyrite_sandstone.png",
+          "thumbnail": "/samples/002_pyrite_sandstone-thum.png"
         }
       ],
       "description": "This stereo image shows pyrite (golden grains) distributed within a sandstone. Pyrite occurs as fine to medium grains, clustered along grain boundaries and pore spaces.",
