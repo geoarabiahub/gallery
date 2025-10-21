@@ -10,14 +10,6 @@ import pyriteStereoThumb from '@/assets/pyrite-stereo-thumb.jpg';
 
 // Image mapping for local imports
 export const imageMap: Record<string, string> = {
-  '/src/assets/quartz-feldspar-bse.jpg': quartzBSE,
-  '/src/assets/quartz-feldspar-eds.jpg': quartzEDS,
-  '/src/assets/quartz-feldspar-bse-thumb.jpg': quartzBSEThumb,
-  '/src/assets/quartz-feldspar-eds-thumb.jpg': quartzEDSThumb,
-  '/src/assets/pyrite-qemscan.jpg': pyriteQEMSCAN,
-  '/src/assets/pyrite-stereo.jpg': pyriteStereo,
-  '/src/assets/pyrite-qemscan-thumb.jpg': pyriteQEMSCANThumb,
-  '/src/assets/pyrite-stereo-thumb.jpg': pyriteStereoThumb,
 };
 
 // Helper function to resolve image URLs
