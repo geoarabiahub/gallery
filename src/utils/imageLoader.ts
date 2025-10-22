@@ -1,18 +1,17 @@
-// Import all test images
-import quartzBSE from '@/assets/quartz-feldspar-bse.jpg';
-import quartzEDS from '@/assets/quartz-feldspar-eds.jpg';
-import quartzBSEThumb from '@/assets/quartz-feldspar-bse-thumb.jpg';
-import quartzEDSThumb from '@/assets/quartz-feldspar-eds-thumb.jpg';
-import pyriteQEMSCAN from '@/assets/pyrite-qemscan.jpg';
-import pyriteStereo from '@/assets/pyrite-stereo.jpg';
-import pyriteQEMSCANThumb from '@/assets/pyrite-qemscan-thumb.jpg';
-import pyriteStereoThumb from '@/assets/pyrite-stereo-thumb.jpg';
-
-// Image mapping for local imports
-export const imageMap: Record<string, string> = {
-};
-
-// Helper function to resolve image URLs
+// Helper function to resolve image URLs with proper base path
 export const resolveImageUrl = (url: string): string => {
-  return imageMap[url] || url;
+  // If it's already an absolute URL or data URL, return as is
+  if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('blob:')) {
+    return url;
+  }
+
+  // For relative paths, ensure they work with the base path
+  // Remove leading slash if present
+  const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+
+  // Get the base path from the document
+  const base = document.querySelector('base')?.getAttribute('href') || '/';
+
+  // Combine base path with the URL
+  return `${base}${cleanUrl}`;
 };
