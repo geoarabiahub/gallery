@@ -5,13 +5,14 @@ export const resolveImageUrl = (url: string): string => {
     return url;
   }
 
-  // For relative paths, ensure they work with the base path
-  // Remove leading slash if present
+  // Get the base path from Vite's import.meta.env
+  const base = import.meta.env.BASE_URL || '/';
+
+  // Remove leading slash from url if present
   const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
 
-  // Get the base path from the document
-  const base = document.querySelector('base')?.getAttribute('href') || '/';
+  // Combine base path with the URL, ensuring no double slashes
+  const fullPath = base.endsWith('/') ? `${base}${cleanUrl}` : `${base}/${cleanUrl}`;
 
-  // Combine base path with the URL
-  return `${base}${cleanUrl}`;
+  return fullPath;
 };
