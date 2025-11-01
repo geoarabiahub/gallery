@@ -86,13 +86,6 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
                 />
               </div>
             )}
-            
-            {!showDetails && (
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-2">
-                <Info className="w-3.5 h-3.5" />
-                Click <Info className="w-3.5 h-3.5" /> to view details
-              </div>
-            )}
           </div>
 
           {/* Sample Details - Sidebar with slide animation */}
