@@ -16,6 +16,7 @@ const Index = () => {
   const [searchParams] = useSearchParams();
   const searchQuery = searchParams.get('search') || '';
   const [selectedSample, setSelectedSample] = useState<Sample | null>(null);
+  const [selectedSampleIndex, setSelectedSampleIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [displayCount, setDisplayCount] = useState(12);
@@ -83,9 +84,15 @@ const Index = () => {
     setDisplayCount(prev => prev + ITEMS_PER_LOAD);
   };
 
-  const handleSampleClick = (sample: Sample) => {
+  const handleSampleClick = (sample: Sample, index: number) => {
     setSelectedSample(sample);
+    setSelectedSampleIndex(index);
     setIsModalOpen(true);
+  };
+
+  const handleNavigateSample = (index: number) => {
+    setSelectedSample(displayedSamples[index]);
+    setSelectedSampleIndex(index);
   };
 
   const handleCloseModal = () => {
@@ -130,11 +137,11 @@ const Index = () => {
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {displayedSamples.map((sample) => (
+              {displayedSamples.map((sample, index) => (
                 <SampleCard
                   key={sample.id}
                   sample={sample}
-                  onClick={() => handleSampleClick(sample)}
+                  onClick={() => handleSampleClick(sample, index)}
                 />
               ))}
             </div>
@@ -160,6 +167,9 @@ const Index = () => {
         sample={selectedSample}
         onClose={handleCloseModal}
         onTagClick={handleTagToggle}
+        allSamples={displayedSamples}
+        currentIndex={selectedSampleIndex}
+        onNavigate={handleNavigateSample}
       />
     </div>
   );

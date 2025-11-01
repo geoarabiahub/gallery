@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { X, Info } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Sample } from '@/types/Sample';
 import ImageSlider from './ImageSlider';
 import SampleDetails from './SampleDetails';
@@ -10,10 +10,28 @@ interface SampleModalProps {
   sample: Sample | null;
   onClose: () => void;
   onTagClick: (tag: string) => void;
+  allSamples?: Sample[];
+  currentIndex?: number;
+  onNavigate?: (index: number) => void;
 }
 
-const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
+const SampleModal = ({ sample, onClose, onTagClick, allSamples = [], currentIndex = 0, onNavigate }: SampleModalProps) => {
   const [showDetails, setShowDetails] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!onNavigate || allSamples.length === 0) return;
+      
+      if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        onNavigate(currentIndex - 1);
+      } else if (e.key === 'ArrowRight' && currentIndex < allSamples.length - 1) {
+        onNavigate(currentIndex + 1);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentIndex, allSamples.length, onNavigate]);
 
   if (!sample) return null;
 
@@ -28,13 +46,49 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
     onClose();
   };
 
+  const handlePrevious = () => {
+    if (onNavigate && currentIndex > 0) {
+      onNavigate(currentIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (onNavigate && currentIndex < allSamples.length - 1) {
+      onNavigate(currentIndex + 1);
+    }
+  };
+
+  const hasPrevious = currentIndex > 0;
+  const hasNext = currentIndex < allSamples.length - 1;
+
 
   return (
     <div
       className="fixed inset-0 bg-background/80 backdrop-blur-overlay z-50 flex items-center justify-center p-2 sm:p-4"
       onClick={handleBackdropClick}
     >
-      <div className="bg-card rounded-lg shadow-hover border border-border w-full max-w-7xl h-[95vh] sm:h-[90vh] flex flex-col overflow-hidden">
+      <div className="bg-card rounded-lg shadow-hover border border-border w-full max-w-7xl h-[95vh] sm:h-[90vh] flex flex-col overflow-hidden relative">
+        {/* Navigation Arrows */}
+        {hasPrevious && (
+          <button
+            onClick={handlePrevious}
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-background/90 hover:bg-background border border-border rounded-full p-2 sm:p-3 shadow-lg transition-all hover:scale-110"
+            aria-label="Previous sample"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
+          </button>
+        )}
+        
+        {hasNext && (
+          <button
+            onClick={handleNext}
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-background/90 hover:bg-background border border-border rounded-full p-2 sm:p-3 shadow-lg transition-all hover:scale-110"
+            aria-label="Next sample"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
+          </button>
+        )}
+
         {/* Header */}
         <div className="flex items-center justify-between p-3 sm:p-6 border-b border-border flex-shrink-0">
           <div className="flex-1 min-w-0">
@@ -44,6 +98,11 @@ const SampleModal = ({ sample, onClose, onTagClick }: SampleModalProps) => {
                 ? `${sample.images[0].technique} • ${sample.images[1].technique}`
                 : sample.images[0].technique
               }
+              {allSamples.length > 0 && (
+                <span className="ml-2 text-muted-foreground/70">
+                  ({currentIndex + 1} / {allSamples.length})
+                </span>
+              )}
             </p>
           </div>
           <div className="flex items-center gap-2">
